@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 95%;
+            margin: 2px auto;
+            border-collapse: collapse;
+            border: 0.5vw double #111;
+        }
+        th{
+            background-color: green;
+            color: #ddd;
+            border: 0.4vw solid #eee;
+            border-radius: 3vw;
+        }
+        td{
+            border: 0.2vw dashed #222;
+            text-align: center;
+            color: blue;
+            margin: 1% auto;
+        }
+
+        #idPrnt{
+            width: 98vw;
+            height: 70vh;
+            position: relative;
+        }
+
+        .clsDot{
+            cursor: pointer;
+            display: inline-block;
+            height: 3%;
+            width: 3%;
+            border-radius: 50%;
+            margin: 0.5% 1.2%;
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th> 헤드1 </th>
+            <th> 헤드2 </th>
+            <th> 헤드3 </th>
+        </tr>
+        <tr>
+            <td colspan="2"> 1 </td>
+            <td> 2 </td>
+        </tr>
+        <tr>
+            <td rowspan="3"> 3 </td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+    </table>
+    <div id="idPrnt">
+        <div class="clsSld">
+            <img src="http://arabbit.link/images/aurora.jpg">
+            <div class="clsCptn"> aurrora </div>
+        </div>
+        <div class="clsSld">
+            <img src="http://arabbit.link/images/mountain.jpg">
+            <div class="clsCptn"> mountain </div>
+        </div>
+        <br>
+        <div id="idPrnt">
+            <span class="clsDot"></span>
+            <span class="clsDot"></span>
+        </div>
+    </div>
+</body>
+</html>
