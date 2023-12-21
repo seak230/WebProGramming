@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let btn1 = document.querySelector('.btn1')
+        let btn2 = document.querySelector('.btn2')
+        let x,y = 0
+        let stick = false
+        let body = document.querySelector('body')
+        let magnet = document.querySelector('.magnet')
+
+        document.addEventListener('mousemove', function(e){
+            let left = e.offsetX
+            let top = e.offsetY
+            magnet.style.left = left + 'px'
+            magnet.style.left = left + 'px'
+            x = e.offsetX
+            y = e.offsetY
+
+            if (top - btn1.style.top < 200){
+                stick = true
+            }
+        })
+        let i = 0
+        document.addEventListener('click', function(){
+            i++
+            if (i % 2 == 1){
+                btn1.classList.add('animate')
+            } else {
+                btn1.classList.remove('animate')
+            }
+        })
+    </script>
+</head>
+<body>
+    <button class="btn1">JS-99</button>
+    <button class="btn2">일반금속</button>
+    <div class="magnet">Magnet</div>
+</body>
+</html>

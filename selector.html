@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        div > strong {
+            color: red;
+        }
+        ul > li:active {
+            color: yellow;
+        }
+        ul > li:hover {
+            background-color: beige;
+        }
+        .text:focus {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="css"><strong>CSS</strong> 적용하기</h1>
+    <div class="test">
+        CSS는 HTML에 스타일을 부여합니다.
+    </div>
+    <div>
+        <strong>웹 개발</strong>
+        <ul>
+            <li>HTML</li>
+            <li><strong>CSS</strong></li>
+            <li>Javascript</li>
+        </ul>
+    </div>
+    <h2 class="test" id="selector">선택자</h2>
+    <p>선택자는 CSS를 적용할 대상을 지정한다.</p>
+    <input type="text" class="text"><br>
+    <input type="text" class="text"><br>
+    <input type="text" class="text"><br>
+</body>
+</html>

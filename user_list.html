@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script >
+        function getList(){
+            if(alert("가입하시겠습니까?")){
+                axios.post("http://dgsw.kclee.kr:5600/user/add", {
+                    userId:document.querySelector("#userId").value,
+                    userName:document.querySelector("#userName").value,
+                }).then((res)=>{
+                    console.log(res.data)
+                    if(res.data.error){
+                        alert(res.data.msg)
+                    } else {
+                        alert("가입이 완료되었습니다.")
+                    }
+                })
+            }
+        }
+    </script>
+</head>
+<body onload="getList()">
+    <div>
+        아이디<input type="text" id="userId"><br>
+        이름<input type="text" id="userName"><br>
+        <button type="button" onclick="getList()">가입하기</button>
+    </div>
+    <ul id="list">
+
+    </ul>
+</body>
+</html>
