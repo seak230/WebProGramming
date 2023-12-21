@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #idPrnt{
+            width: 80vw;
+            height: 80vh;
+            background-color: hsla(130, 60%, 50%, 1);
+            position: relative; 
+            /* 부모는 relative 또는 absolute 부모가 움직이지 않아야 한다 */
+        }
+        #idChld{
+            width: 80px;
+            height: 80px;
+            background-color: hsla(300, 100%, 50%, 1);
+            position: absolute;
+            transition: 0.5s;
+            /* 자식은 무조건 absolute가 되어야 한다 */
+        }
+    </style>
+    <script>
+        var idIntrvl;
+        // Intrvl 일정한 간격으로 계속 반복
+        function mOk(){
+            let lBtn = document.getElementById("idBtn");
+            let lChld = document.getElementById("idChld");
+            // var idIntrv;
+            if(lBtn.textContent.trim()=="start")
+            {
+                lBtn.textContent = "stop";
+
+                // lChld.style.backgroundColor = "hsla(120, 100%, 60%, 1)";
+                
+                idIntrvl = setInterval(mIntrvl, 200);
+                // 일정한 간격으로 실행 1000/1초 시간을 삼는다.
+
+                // 수행평가
+                function mIntrvl(){
+                    // alert(lCld.style.left);
+                    // let : 번수 선언
+                    let sLeft = lChld.style.left;
+                    let lLeft = Number(sLeft.replace('%', ''));
+                    let sTop = lChld.style.top;
+                    let lTop = Number(sTop.substring(0, sTop.length-1));
+                    // alert("("+lLeft+","+lTop+")");
+                    lLeft = (lLeft + 2) % 52;
+                    lTop = (lTop + 2) % 52;
+                    lChld.style.left = lLeft + "%";
+                    lChld.style.top = lTop + "%";
+
+                    lChld.textContent = "(" + lChld.style.left + "," + lChld.style.top + ")"
+                }
+            }
+            else // stop 기능
+            {
+                lBtn.textContent = "start";
+                clearInterval(idIntrvl);
+            }
+
+            lChld.style.left = "0%";
+            lChld.style.top = "0%";
+        }
+    </script>
+</head>
+<body>
+    <button id="idBtn" onclick="mOk()">start</button>
+    <div id="idPrnt">
+        <div id="idChld">
+        </div>
+    </div>
+</body>
+</html>

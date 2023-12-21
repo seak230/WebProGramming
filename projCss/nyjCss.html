@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <style>
+            h1 {color:blue}
+            #idSpan {color:red}
+            .cls1{background-color: yellow;}
+            .cls2 {color:green}
+            .cls3 {text-align: center;}
+            /* 3, 6번째줄의 font-size: 1.2em */
+            .cls4 {font-size: 1.2em;}
+            /* 이미지 태그에 대해서 위쪽으로 여백(margin-top)을 30px 둔다 */
+            img {margin-top: 30px; margin-bottom: 30px; margin-left: 100px;}
+            /* 이미지 태그에 대해서 아래쪽으로 여백(margin-bottom)을 30px 둔다 */
+            /* h5 태그와 h1 태그는 배경색을 magenta로 설정한다.*/
+            h5,h1 {background-color: magenta;}
+            /* idTgr의 크기를 width:30%, height:18%, 위쪽여백: 30px, 아래쪽여백: 30px */
+            #imgTgr {width: 30%;
+                     height: 18%;
+                     margin-top: 30px;
+                     margin-bottom:30px;
+                     margin-left: auto;
+                     margin-right: auto;
+                     display: block;
+                    }
+            /* 버튼의 크기를 width: 20%, 
+            height:15% 
+            가운데 위치하도록 설정한다. 
+            위쪽여백 : 30px,
+            아래쪽여백 : 30px,
+            배경색 : aqua 
+            글자색 : magenta*/
+            button {
+                    width: 20%; 
+                    height: 15%; 
+                    margin-top: 30px; 
+                    margin-bottom: 30px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: block;
+                    background-color: aqua;
+                    color: magenta;
+                   }
+
+            
+        </style>
+        <title> studying about CSS </title>
+    </head>
+    <body>
+        <h1 class="cls3"> teacher of web program is
+            <span id="idSpan"> hand some!!</span> </h1>
+
+
+        <div>
+            <img id="imgTgr" src="http://arabbit.link/images/tiger.png">
+
+        </div>
+
+        <h5 class="cls1"> 1-4 cassmates are all friendly.</h5>
+        <h6 class="cls2 cls4"> 1-4 students studty very hard!! </h5>
+        <h5 class="cls1"> 1-4 teacher is very beautiful!!.</h5>
+        <h5 class="cls2 cls4"> 1-4 student are calm during lesson.</h5>
+        <div>
+            we are studying about css now!!
+            <br>
+            <img src="http://arabbit.link/images/rock.png">
+            <br>
+            <button> 제출하기 </button>
+        </div>
+        <h3 class="cls3"> 1-4 students' attitude is great during tading lesson </h3>
+    </body>
+</html>

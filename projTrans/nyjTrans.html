@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div 너비: 10vw, 높이: 20vh, background:녹색 */
+        div{
+            width: 10vw;
+            height: 15vh;
+            /* background-color: green; */
+            transition: 4s;
+            border: 2px solid;
+        }
+        #idLnr { transition-timing-function: linear; background-color: red; border-radius: 10px 0px 0px;}
+        #idEase { transition-timing-function: ease; background-color: orange; border-radius: 0px 10px 0px;}
+        #idEaseIn { transition-timing-function: ease-in; background-color: yellow; border-radius: 0px 0px 10px;}
+        #idEaseOut { transition-timing-function: ease-out; background-color: green; border-radius: 0px 0px 0px 10px;}
+        #idEaseInOut { transition-timing-function: ease-in-out; background-color: blue; border-radius: 0px 10px ;}
+    </style>
+    <script>
+        const mOk = ()=> {
+            let arrDiv = document.querySelectorAll(".clsDiv");
+            // alert(arrDiv.length);
+            const text = document.getElementById("idBtn");
+            let lWidth=""
+
+            // var lLnr = document.getElementById("idLnr")
+            // var lEase = document.getElementById("idEase")
+            // var lEaseIn = document.getElementById("idEaseIn")
+            // var lEaseOut = document.getElementById("idEaseOut")
+            // var lEaseInOut = document.getElementById("idEaseInOut")
+
+            if(text.textContent.trim() == "꾸짖을 갈")//변신 버튼 클릭
+            {    
+                text.textContent="초기화";
+                lWidth = "80vw";
+                // lEaseInOut.style.width="90vw";
+                // lEaseOut.style.width="90vw";
+                // lEaseIn.style.width="90vw";
+                // lEase.style.width="90vw";
+                // lLnr.style.width="90vw";
+            }
+            else // 초기화 버튼 클릭했을때
+            {
+                text.textContent="꾸짖을 갈";
+                lWidth = "10vw";
+                // lEaseInOut.style.width="10vw";
+                // lEaseOut.style.width="10vw";
+                // lEaseIn.style.width="10vw";
+                // lEase.style.width="10vw";
+                // lLnr.style.width="10vw";
+            }
+
+            for (let i=0; i < arrDiv.length; i++)
+            {
+                arrDiv[i].style.width = lWidth;
+            }
+
+            arrDiv.forEach((pItem, pIdx, pArr)=>{
+                pItem.style.width = lWidth;
+            })
+        }
+    </script>
+</head>
+<body>
+    <div> welcome to transition world!! </div>
+    <button onclick="mOk()" id="idBtn"> 꾸짖을 갈 </button>
+    <div class="clsDiv" id="idLnr"> linear..... </div>
+    <div class="clsDiv" id="idEase"> ease..... </div>
+    <div class="clsDiv" id="idEaseIn"> ease-in..... </div>
+    <div class="clsDiv" id="idEaseOut"> ease-out..... </div>
+    <div class="clsDiv" id="idEaseInOut"> ease-in-out..... </div>
+</body>
+</html>

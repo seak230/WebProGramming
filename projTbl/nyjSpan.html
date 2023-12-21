@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clsDiv {
+            width: 50%;
+            height: 80%;
+            background-color: gray;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            height: 80px;
+            background-color: green;
+            vertical-align: top;
+            padding: 5px;
+        }
+
+        table, td{
+            padding: 20px;
+            border: 2px inset whitesmoke;
+            height: 50px;
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="clsDiv">
+        <table>
+        <tr>
+            <th colspan="3"> 1 </th>
+            <!-- <th> 2 </th>
+            <th> 3 </th> -->
+        </tr>
+
+        <tr>
+            <td> 4 </td>
+            <td> 5 </td>
+            <td> 6 </td>
+        </tr>
+    
+        <tr>
+            <td colspan="2" rowspan="2"> FIESTA </td>
+            <td> 9 </td>
+        </tr>
+
+        <tr>
+            <!-- <th> 10 </th>
+            <th> 11 </th> -->
+            <td> 12 </td>
+        </tr>
+
+        <tr>
+            <td> 13 </td>
+            <td> 14 </td>
+            <td> 15 </td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>

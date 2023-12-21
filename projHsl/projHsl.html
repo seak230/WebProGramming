@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. 너비: 80vw, 높이:30vh
+        2. 경계선 : 3px, reidge 색깔: hsl로 옅은 초록색
+        3. body: 배경색 hsl: 옅은 초록색
+        5. 경계선 모서리 둥글게 border-radius */
+        #idHsl {
+            width: 80vw;
+            height: 30vh;
+            border: 5px solid hsl(120, 100%, 50%);
+            background-color: hsl(240, 35%, 50%);
+            border-radius: 0px 0px 20px; 
+            /* 각각 모서리를 둥글게 처리할 수 있다.(시계방향) */
+        }
+        /* 4. div 배경색: 옅은 파란색 */
+        #idHsla {
+            width: 80vw;
+            height: 30vh;
+            border: 5px solid hsl(120, 100%, 50%);
+            background-color: hsl(240, 35%, 50%, 0.3);
+        }
+        body {
+            background-color: hsl(120, 40%, 50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="idHsl"> hsl 연습 </div>
+    <div id="idHsla"> hsla 연습 </div>
+    <!-- /* 트렌지션 할 차례 */ -->
+</body>
+</html>

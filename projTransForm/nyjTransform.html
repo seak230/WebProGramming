@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding:80px;
+        }
+        #idDiv {
+            width: 80px;
+            height: 80px;
+            background-color: hsla(240, 60%, 60%, 60%);
+            transition: 4s;
+        }
+    </style>
+    <script>
+        // 함수 선언 function
+        // () 파라미터 던저주는 정보
+        function mOk(pGbn){
+            lObj = document.getElementById("idDiv");
+            // 버튼에서 준 값 확인 작업
+            if(pGbn == 'trans')
+            {
+                // ` : 함수를 먼저 실행하라는 뜻
+                lObj.style.transform = `translate(50px, 100px)`;
+                lObj.style.width = '120px';
+            }
+            // 버튼에서 준 값 확인 작업
+            else if(pGbn == 'reset')
+            {
+                // reload 제일 처음 상태
+                window.location.reload();
+            }
+            else if(pGbn == 'rot')
+            {
+                lObj.style.transform=`rotate(135deg)`;
+            }
+            else if(pGbn == 'scl')
+            {
+                lObj.style.transform = `scale(2,4)`;
+            }
+            else if(pGbn == 'skewX')
+            {
+                lObj.style.transform = `skewX(45deg)`
+            }
+            else if(pGbn == 'skewY')
+            {
+                lObj.style.transform = `skewY(45deg)`
+            }
+
+            else if(pGbn == 'rotateX')
+            {
+                lObj.style.transform = `rotateX(150deg)`;
+            }
+            else if(pGbn == 'rotateY')
+            {
+                lObj.style.transform = `rotateY(150deg)`
+            }
+            else if(pGbn == 'rotateZ')
+            {
+                lObj.style.transform = `rotateZ(150deg)`
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <button onclick="mOk('trans')"> translate </button>
+    <button onclick="mOk('reset')"> reset </button>
+    <button onclick="mOk('rot')"> rotate(135) </button>
+    <button onclick="mOk('scl')"> scale(2,4) </button>
+    <button onclick="mOk('skewX')"> skewX(45) </button>
+    <button onclick="mOk('skewY')"> skewY(45) </button>
+
+    <button onclick="mOk('rotateX')"> rotateX(150) </button>
+    <button onclick="mOk('rotateY')"> rotateY(150) </button>
+    <button onclick="mOk('rotateZ')"> rotateZ(150) </button>
+    <!-- onclick : 버튼이 클릭 했을때 -->
+    <div id = "idDiv">  </div>
+</body>
+</html>

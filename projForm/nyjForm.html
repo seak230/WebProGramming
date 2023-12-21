@@ -1,0 +1,134 @@
+<html>
+    <head>
+      <title> let's study about form!!</title>
+      <style>
+        h2 {
+            background-color: yellow;
+            color: red;
+            text-align: center;
+        }
+        input{
+          background-color:aqua ;
+          color: red;
+        }
+
+        .clsRd {
+          color:green;
+        }
+        .clsRd2 {
+          display: inline-block;
+          width: 13%;
+          text-align: right;
+          color:magenta
+        }
+      </style>
+      <script>
+        function mChk(){
+           var lFm = document.fm;
+           var lGrd = lFm.grd;
+           var lCls = lFm.cls;
+           var lNum = document.getElementById('idNum');
+           var lAccss = lFm.accessKey;
+
+           if(lGrd.value=='')
+           {
+            alert("input your grade!!");
+            return false;
+           }
+
+           //반 값을 검증하는데 1) 값이 없는거 2)값이 0인것
+           else if(lCls.value==''||lCls.value=='0')
+           {
+            alert("select your class number!!");
+            lCls.focus();
+            return false;
+           }
+
+           //번호가 없거나 숫자값이 아닐(isNaN())때 검증한다
+           else if(lNum.value=='' || isNaN(lNum.value))
+           {
+            alert("input your number");
+            lNum.focus();
+            return false;
+           }
+           //인증키 오류 점검: 인증키 길이(.length)가 4가 아닐때를 검증한다
+           else if(lAccss.value.length != 4)
+           {
+            alert("input access key");
+            lAccss.focus();
+            return false;
+           }
+
+           else
+              lFmk.submit();//모두 통과되었을때 서버로 보낸다
+        }
+      </script>
+    </head>
+    <body>
+     <h2>welcome to form world!! </h2>
+     <form name="fm" method="post" action="http://arabbit.link/dirSw/insrtHstry.php" onsubmit="return false;">
+      <div>
+     <label class="clsRd2"> 학년:</label>
+      <!-- <input type="text" name="grd" placeholder="숫자만"> -->
+      <input id="idRd1"type="radio" name="grd" value="1" >
+        <label class="clsRd"  for="idRd1"> 1학년 </label>
+       <input id="idRd2"type="radio" name="grd" value="2" >
+        <label for="idRd2" class="clsRd"> 2학년 </label>
+       <input id="idRd3"type="radio" name="grd" value="3" >
+        <label for="idRd3" class="clsRd"> 3학년 </label>
+
+     </div>
+
+     <div>
+      <label class="clsRd2"> &nbsp;&nbsp;&nbsp;반:</label>
+       <!-- <input type="text" name="cls" placeholder="숫자만"> -->
+       <select name="cls">
+        <option value="0">
+          반 선택?
+        </option>
+        <option value="1">
+          1반
+        </option>
+        <option value="2">
+          2반
+        </option>
+        <option value="3">
+          3반
+        </option>
+        <option value="4">
+          4반
+        </option>
+       </select>
+      </div>
+
+      <div>
+        <label class="clsRd2"> 번호:</label>
+         <input type="text" id="idNum" name="num" placeholder="숫자만">
+        </div>
+
+      <div>
+        <label class="clsRd2" > 이름:</label>
+         <input type="text" name="nm" placeholder="한글로?">
+        </div>
+
+        <div>
+          <label class="clsRd2"> 구분자1:</label>
+           <input type="text" name="gbn1" placeholder="한글로?">
+          </div>
+
+          <div>
+            <label class="clsRd2"> 구분자2:</label>
+             <input type="text" name="gbn2" placeholder="한글로?">
+            </div>
+
+            <div>
+              <label class="clsRd2"> 인증키:</label>
+               <input type="password" name="accessKey">
+              </div>
+
+              <div>
+                 <input type="submit" value="전송하기" onclick="mChk();" >
+                </div>
+     </form>
+    </body>
+</html>
